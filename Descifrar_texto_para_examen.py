@@ -9,38 +9,38 @@ HXKPCJEKE XJ PEVI AX 1937 TE HEKXE AX TCSZCAEK TE KXvITZRCIJ, AXNPIKETCLEJAI E T
 HKCZJOI OKEJSZCNHE."""
 
 #*******************Subprogramas****************
-#Pasar de frase a diccionario de letras
+
 def contar_apariciones_letras(frase):
     dic_letras = {}
 
-    # Iterar a través de cada carácter en la frase
+  
     for caracter in frase:
       
-        # Verificar si el carácter es una letra
+       
         if caracter.isalpha():
-            # Si existe, incrementar su contador
+           
             if caracter in dic_letras:
                 dic_letras[caracter] += 1
-            # Si no existe, agregarlo con un contador inicial de 1
+      
             else:
                 dic_letras[caracter] = 1
 
     return dic_letras
 
-# Ordenar el diccionario de mayor a menor según los valores
+
 def ordenar_apariciones_letra(dic_sin_ord):
     diccionario_ordenado = dict(sorted(dic_sin_ord.items(), key=lambda item: item[1], reverse= True))
     return diccionario_ordenado
 
 
-#Sustitui el diccionario de claves en la frase 
+ 
 def sustituir_letras(texto, diccionario):
     for clave, valor in diccionario.items():
         texto = texto.replace(clave, valor)
     return texto
 
 
-#Creamos un diccionrio con todas las claves posibles
+
 diccionario = {
     "A" : "d" ,
     "B" : "" ,
