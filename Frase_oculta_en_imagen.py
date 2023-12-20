@@ -7,13 +7,13 @@ import numpy  as np
 hash_conocido = "e5ed313192776744b9b93b1320b5e268"
 es_imagen = False
 
-# Ruta de la carpeta que contiene las imágenes
-carpeta_imagenes = "/home/eneko/Documentos/Universidad/Seguridad/cifrado_1/imagen"
 
-# Obtener una lista de nombres de archivo en la carpeta
+carpeta_imagenes = "/home/eduardo/Documentos/Universidad/Seguridad/cifrado_1/imagen"
+
+
 archivos = os.listdir(carpeta_imagenes)
 
-# Inicializar un índice para recorrer la lista de archivos
+
 indice = 0
 
 while indice < len(archivos) and not es_imagen:
@@ -23,7 +23,7 @@ while indice < len(archivos) and not es_imagen:
     if nombre_archivo.lower().endswith((".jpg")):
         ruta_completa = os.path.join(carpeta_imagenes, nombre_archivo)
         
-        # Leer la imagen utilizando Pillow
+       
         imagen = Image.open(ruta_completa)
 
         #
@@ -31,7 +31,7 @@ while indice < len(archivos) and not es_imagen:
             contenido_imagen = file.read()
             hash_calculado = hashlib.md5(contenido_imagen).hexdigest()
     
-        # Compara el hash calculado con el hash conocido
+        
         if hash_calculado == hash_conocido:
             print("Es la imagen que buscabamos")
             es_imagen = True
@@ -41,10 +41,10 @@ while indice < len(archivos) and not es_imagen:
 
         else:
             print("Esta imagen no es")
-            # Incrementar el índice
+           
             indice += 1
     else:
-        # Si no es una imagen, pasa al siguiente archivo
+        
         indice += 1
 
 
